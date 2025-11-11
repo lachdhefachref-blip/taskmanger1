@@ -28,9 +28,8 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --configuration production production --base-href "/taskmanger1/"
-      - name: Create 404.html for SPA redirect
-        run: cp dist/taskmanager1/browser/index.html dist/taskmanager1/browser/404.html
+        run: npm run build -- --configuration production production 
+    
 
       - name: Upload dist folder
         uses: actions/upload-pages-artifact@v3
