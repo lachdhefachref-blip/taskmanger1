@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --configuration production production 
+        run: npm run build -- --configuration production production --base-href "/taskmanager1/"
     
 
       - name: Upload dist folder
