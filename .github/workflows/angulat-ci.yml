@@ -27,11 +27,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular app
+      - name: Build Angular project
         run: npx ng build --configuration production --output-path=docs --base-href=/taskmanger1/
 
-      - name: Create 404.html for SPA redirect
-        run: cp dist/taskmanager1/browser/index.html dist/taskmanager1/browser/404.html
+      - name: Fix 404 for GitHub Pages
+        run: cp docs/index.html docs/404.html
+
 
       - name: Upload dist folder
         uses: actions/upload-pages-artifact@v3
